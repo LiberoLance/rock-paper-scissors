@@ -22,7 +22,7 @@ function computerPlay() {
   2. return string declaring winner
 */
 function playRound(playerChoice, computerChoice) {
-  let win = 'Congratulations, you've won!';
+  let win = "Congratulations, you've won!";
 
   if(playerChoice === computerChoice) {
     return 'draw!';
