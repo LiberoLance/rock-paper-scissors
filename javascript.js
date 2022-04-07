@@ -33,7 +33,7 @@ function playRound(playerChoice, computerChoice) {
   } else if(playerChoice.toLowerCase() === 'scissors' && computerChoice === 'paper') {
     return win;
   } else {
-    return 'oof, you've lost! Better luck next time!';
+    return "oof, you've lost! Better luck next time!";
   }
 }
 
