@@ -21,6 +21,21 @@ function computerPlay() {
   1. Map out conditions
   2. return string declaring winner
 */
+function playRound(playerChoice, computerChoice) {
+  let win = 'Congratulations, you've won!';
+
+  if(playerChoice === computerChoice) {
+    return 'draw!';
+  } else if(playerChoice.toLowerCase() === 'rock' && computerChoice === 'scissors') {
+    return win;
+  } else if(playerChoice.toLowerCase() === 'paper' && computerChoice === 'rock') {
+    return win;
+  } else if(playerChoice.toLowerCase() === 'scissors' && computerChoice === 'paper') {
+    return win;
+  } else {
+    return 'oof, you've lost! Better luck next time!';
+  }
+}
 
 /*game()
   plays a game of 5 rounds, tracks the score and reports the winner at the end
@@ -31,4 +46,6 @@ function computerPlay() {
 */
 
 /*test code here*/
-console.log(computerPlay())
+let computerChoice = computerPlay()
+console.log(computerChoice)
+console.log(playRound('rock',computerChoice)
