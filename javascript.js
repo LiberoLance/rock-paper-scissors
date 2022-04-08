@@ -50,7 +50,7 @@ function game() {
   let playerChoice = '';
   
   for(let i = 0; i < rounds; i++) {
-    playerChoice = prompt(`        Round ${i + 1}\nrock, paper or scissors?`);
+    playerChoice = prompt(`Round ${i + 1}\nrock, paper or scissors?`);
     let result = playRound(playerChoice, computerPlay());
     
     if(result === 1) {
