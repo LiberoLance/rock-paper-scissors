@@ -49,7 +49,7 @@ function game() {
   let playerChoice = '';
   
   for(let i = 0; i < 5; i++) {
-    playerChoice = prompt("rock, paper or scissors?");
+    playerChoice = prompt("/t/tRound ${i + 1}/nrock, paper or scissors?");
     let result = playRound(playerChoice, computerPlay());
     
     if(result === 1) {
@@ -62,9 +62,9 @@ function game() {
   if(playerWin === computerWin) {
     return 'draw!';
   } else if(playerWin > computerWin) {
-    return "congratulations, you've won!";
+    return "congratulations, you've won! You're score was ${playerWin}";
   } else {
-    return "Oof, you've lost! Better luck next time...";
+    return "Oof, you've lost! You're score was ${playerWin} Better luck next time...";
   }
 }
 
