@@ -44,12 +44,13 @@ function playRound(playerChoice, computerChoice) {
   4. compare winnings and declare a winner after the loop ends
 */
 function game() {
+  let rounds = 5;
   let playerWin = 0;
   let computerWin = 0;
   let playerChoice = '';
   
-  for(let i = 0; i < 5; i++) {
-    playerChoice = prompt(`/t/tRound ${i + 1}/nrock, paper or scissors?`);
+  for(let i = 0; i < rounds; i++) {
+    playerChoice = prompt(`\t\tRound ${i + 1}\nrock, paper or scissors?`);
     let result = playRound(playerChoice, computerPlay());
     
     if(result === 1) {
@@ -62,9 +63,9 @@ function game() {
   if(playerWin === computerWin) {
     return 'draw!';
   } else if(playerWin > computerWin) {
-    return `congratulations, you've won! You're score was ${playerWin}`;
+    return `congratulations, you've won! You're score was ${playerWin} with ${rounds - (computerWin + playerWin)} draws.`;
   } else {
-    return `Oof, you've lost! You're score was ${playerWin} Better luck next time...`;
+    return `Oof, you've lost! You're score was ${playerWin} with ${rounds - (computerWin + playerWin)} draws.  Better luck next time...`;
   }
 }
 
