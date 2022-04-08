@@ -48,4 +48,4 @@ function playRound(playerChoice, computerChoice) {
 /*test code here*/
 let computerChoice = computerPlay()
 console.log(computerChoice)
-console.log(playRound('rock',computerChoice)
+console.log(playRound('rock',computerChoice))
