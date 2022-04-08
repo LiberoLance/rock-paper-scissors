@@ -22,18 +22,17 @@ function computerPlay() {
   2. return string declaring winner
 */
 function playRound(playerChoice, computerChoice) {
-  let win = "Congratulations, you've won!";
 
   if(playerChoice === computerChoice) {
-    return 'draw!';
+    return 0;
   } else if(playerChoice.toLowerCase() === 'rock' && computerChoice === 'scissors') {
-    return win;
+    return 1;
   } else if(playerChoice.toLowerCase() === 'paper' && computerChoice === 'rock') {
-    return win;
+    return 1;
   } else if(playerChoice.toLowerCase() === 'scissors' && computerChoice === 'paper') {
-    return win;
+    return 1;
   } else {
-    return "oof, you've lost! Better luck next time!";
+    return 2;
   }
 }
 
@@ -44,8 +43,30 @@ function playRound(playerChoice, computerChoice) {
   3. increment a counter for each number of wins
   4. compare winnings and declare a winner after the loop ends
 */
+function game() {
+  let playerWin = 0;
+  let computerWin = 0;
+  let playerChoice = '';
+  
+  for(let i = 0; i < 5; i++) {
+    playerChoice = prompt("rock, paper or scissors?");
+    let result = playRound(playerChoice, computerPlay());
+    
+    if(result === 1) {
+      playerWin++;
+    }
+    if(result === 2) {
+      computerWin++;
+    }
+  }
+  if(playerWin === computerWin) {
+    return 'draw!';
+  } else if(playerWin > computerWin) {
+    return "congratulations, you've won!";
+  } else {
+    return "Oof, you've lost! Better luck next time...";
+  }
+}
 
 /*test code here*/
-let computerChoice = computerPlay()
-console.log(computerChoice)
-console.log(playRound('scissors',computerChoice))
+console.log(game())
