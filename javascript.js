@@ -42,6 +42,50 @@ function playRound(playerChoice, computerChoice) {
   2. display results of each round in a div and keep a score for each player
   3. once a player reaches 5 points announce the winner
 */
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissor = document.querySelector('.scissor');
+let playerWin = 0;
+let computerWin = 0;
+
+rock.addEventListener('click', () => {
+  let result = playRound('rock', computerPlay())
+  
+  if(result === 1) {
+      playerWin++;
+  }
+  if(result === 2) {
+    computerWin++;
+  }
+});
+paper.addEventListener('click', () => {
+  let result = playRound('rock', computerPlay())
+
+  if(result === 1) {
+      playerWin++;
+  }
+  if(result === 2) {
+    computerWin++;
+  }
+});
+scissor.addEventListener('click', () => {
+  let result = playRound('rock', computerPlay())
+
+  if(result === 1) {
+      playerWin++;
+  }
+  if(result === 2) {
+    computerWin++;
+  }
+});
+
+if(playerWin > 5) {
+  alert("congratulations, you've won!");
+}
+if(computerWin > 5) {
+  alert("oof you've lost, better luck next time!");
+}
+
 /* old code
 function game() {
   let rounds = 5;
