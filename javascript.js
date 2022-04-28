@@ -38,11 +38,11 @@ function playRound(playerChoice, computerChoice) {
 
 /*game()
   plays a game of 5 rounds, tracks the score and reports the winner at the end
-  1. loop 5 times calling playRound()
-  2. prompt() the user to update their choice for each round
-  3. increment a counter for each number of wins
-  4. compare winnings and declare a winner after the loop ends
+  1. Make three buttons, one for each selection call playRound when clicked
+  2. display results of each round in a div and keep a score for each player
+  3. once a player reaches 5 points announce the winner
 */
+/* old code
 function game() {
   let rounds = 5;
   let playerWin = 0;
@@ -68,6 +68,7 @@ function game() {
     return `Oof, you've lost! You're score was ${playerWin} with ${rounds - (computerWin + playerWin)} draws.  Better luck next time...`;
   }
 }
+*/
 
 /*test code here*/
 console.log(game())
