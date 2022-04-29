@@ -38,7 +38,13 @@ function playRound(playerChoice, computerChoice) {
 
 /*game()
   plays a game of 5 rounds, tracks the score and reports the winner at the end
-  1. Make three buttons, one for each selection call playRound when clicked
+  1. call playRound when clicked
   2. display results of each round in a div and keep a score for each player
   3. once a player reaches 5 points announce the winner
 */
+function game() {
+  let playerWin = 0;
+  let computerWin = 0;
+
+  
+}
