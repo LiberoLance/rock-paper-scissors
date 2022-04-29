@@ -45,6 +45,22 @@ function playRound(playerChoice, computerChoice) {
 function game() {
   let playerWin = 0;
   let computerWin = 0;
+  const rbtn = document.querySelector('#rock'); 
+  const scoreboard = document.querySelector('#scoreboard');  
 
-  
+  rbtn.addEventListener("click", function() {
+     let result = playRound('rock', computerPlay());
+     if(result === 1){
+       playerwin++;
+     }
+     if(result === 2){
+       computerWin++;
+     }
+
+     scoreboard.textContent = playerWin;
+     scoreboard.textContent = computerWin;     
+  });  
 }
+
+
+game();
