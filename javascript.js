@@ -51,7 +51,7 @@ function game() {
   rbtn.addEventListener("click", function() {
      let result = playRound('rock', computerPlay());
      if(result === 1){
-       playerwin++;
+       playerWin++;
      }
      if(result === 2){
        computerWin++;
