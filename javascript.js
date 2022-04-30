@@ -45,7 +45,10 @@ function playRound(playerChoice, computerChoice) {
 function game() {
   let playerWin = 0;
   let computerWin = 0;
-  const rbtn = document.querySelector('#rock'); 
+  let output = '';
+  const rbtn = document.querySelector('#rock');
+  const pbtn = document.querySelector('#paper');
+  const sbtn = document.querySelector('#scissor'); 
   const scoreboard = document.querySelector('#scoreboard');  
 
   rbtn.addEventListener("click", function() {
@@ -56,9 +59,33 @@ function game() {
      if(result === 2){
        computerWin++;
      }
+     
+     output = `player score: ${playerWin}  computer score: ${computerWin}`;
+     scoreboard.textContent = output;     
+  });
+  pbtn.addEventListener("click", function() {
+     let result = playRound('paper', computerPlay());
+     if(result === 1){
+       playerWin++;
+     }
+     if(result === 2){
+       computerWin++;
+     }
 
-     scoreboard.textContent = playerWin;
-     scoreboard.textContent = computerWin;     
+     output = `player score: ${playerWin}  computer score: ${computerWin}`;
+     scoreboard.textContent = output;
+  });
+  sbtn.addEventListener("click", function() {
+     let result = playRound('scissor', computerPlay());
+     if(result === 1){
+       playerWin++;
+     }
+     if(result === 2){
+       computerWin++;
+     }
+
+     output = `player score: ${playerWin}  computer score: ${computerWin}`;
+     scoreboard.textContent = output;
   });  
 }
 
