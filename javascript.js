@@ -86,8 +86,20 @@ function game() {
 
      output = `player score: ${playerWin}  computer score: ${computerWin}`;
      scoreboard.textContent = output;
-  });  
+  });
+  
+  if(playerWin === 5) {
+    output = "Congratulations you're the winner!";
+    scoreboard.textContent = output;
+    playerwin = 0;
+    computerWin = 0;
+  }
+  if(computerWin === 5) {
+    output = "Oof!, you've lost the computer has won! Better luck next time!";
+    scoreboard.textContent = output;
+    playerWin = 0;
+    computerWin = 0;
+  }
 }
-
 
 game();
