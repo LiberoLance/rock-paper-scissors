@@ -69,10 +69,11 @@ function game() {
        computerWin = 0;
      }
      if(computerWin > 4) {
-       output = "Congratulations you're the winner!";
+       output = "Oof! You've lost! Better luck next time!";
        scoreboard.textContent = output;
        playerwin = 0;
        computerWin = 0;
+       scoreboard.textContent = "results will be displayed here."
      }     
   });
   pbtn.addEventListener("click", function() {
@@ -93,10 +94,11 @@ function game() {
        computerWin = 0;
      }
      if(ComputerWin > 4) {
-       output = "Congratulations you're the winner!";
+       output = "Oof! You've lost! Better luck next time!";
        scoreboard.textContent = output;
        playerwin = 0;
        computerWin = 0;
+       scoreboard.textContent = "results will be displayed here."
      }
   });
   sbtn.addEventListener("click", function() {
@@ -117,10 +119,11 @@ function game() {
        computerWin = 0;
      }
      if(computerWin > 4) {
-      output = "Congratulations you're the winner!";
-      scoreboard.textContent = output;
-      playerwin = 0;
-      computerWin = 0;
+       output = "Oof! You've lost! Better luck next time!";
+       scoreboard.textContent = output;
+       playerwin = 0;
+       computerWin = 0;
+       scoreboard.textContent = "results will be displayed here."
      }
   });
   
