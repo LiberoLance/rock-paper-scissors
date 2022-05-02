@@ -59,7 +59,11 @@ function game() {
      if(result === 2){
        computerWin++;
      }
-     
+     if(result === 0){
+       output = 'draw!';
+       scoreboard.textContent = output;
+     }
+    
      output = `player score: ${playerWin}  computer score: ${computerWin}`;
      scoreboard.textContent = output;
      if(playerWin > 4) {
@@ -78,6 +82,10 @@ function game() {
      }
      if(result === 2){
        computerWin++;
+     }
+     if(result === 0){
+       output = 'draw!';
+       scoreboard.textContent = output;
      }
 
      output = `player score: ${playerWin}  computer score: ${computerWin}`;
@@ -99,6 +107,10 @@ function game() {
      if(result === 2){
        computerWin++;
      }
+     if(result === 0){
+       output = 'draw!';
+       scoreboard.textContent = output;
+     }
 
      output = `player score: ${playerWin}  computer score: ${computerWin}`;
      scoreboard.textContent = output;
@@ -111,7 +123,6 @@ function game() {
        scoreboard.textContent = output;
      } 
   });
-  
 }
 
 game();
