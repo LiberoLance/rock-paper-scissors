@@ -88,13 +88,13 @@ function game() {
      scoreboard.textContent = output;
   });
   
-  if(playerWin === 5) {
+  if(playerWin > 4) {
     output = "Congratulations you're the winner!";
     scoreboard.textContent = output;
     playerwin = 0;
     computerWin = 0;
   }
-  if(computerWin === 5) {
+  if(computerWin > 4) {
     output = "Oof!, you've lost the computer has won! Better luck next time!";
     scoreboard.textContent = output;
     playerWin = 0;
