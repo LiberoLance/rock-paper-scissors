@@ -64,8 +64,8 @@ function game() {
        scoreboard.textContent = output;
      }
     
-     output = `player score: ${playerWin}  computer score: ${computerWin}`;
-     scoreboard.textContent = output;
+    /* output = `player score: ${playerWin}  computer score: ${computerWin}`;
+     scoreboard.textContent = output;*/
      if(playerWin > 4) {
        output = "Congratulations you're the winner!";
        scoreboard.textContent = output; 
