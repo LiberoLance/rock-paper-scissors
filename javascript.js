@@ -61,7 +61,19 @@ function game() {
      }
      
      output = `player score: ${playerWin}  computer score: ${computerWin}`;
-     scoreboard.textContent = output;     
+     scoreboard.textContent = output;
+     if(playerWin > 4) {
+       output = "Congratulations you're the winner!";
+       scoreboard.textContent = output;
+       playerwin = 0;
+       computerWin = 0;
+     }
+     if(computerWin > 4) {
+       output = "Congratulations you're the winner!";
+       scoreboard.textContent = output;
+       playerwin = 0;
+       computerWin = 0;
+     }     
   });
   pbtn.addEventListener("click", function() {
      let result = playRound('paper', computerPlay());
@@ -74,6 +86,18 @@ function game() {
 
      output = `player score: ${playerWin}  computer score: ${computerWin}`;
      scoreboard.textContent = output;
+     if(playerWin > 4) {
+       output = "Congratulations you're the winner!";
+       scoreboard.textContent = output;
+       playerwin = 0;
+       computerWin = 0;
+     }
+     if(ComputerWin > 4) {
+       output = "Congratulations you're the winner!";
+       scoreboard.textContent = output;
+       playerwin = 0;
+       computerWin = 0;
+     }
   });
   sbtn.addEventListener("click", function() {
      let result = playRound('scissor', computerPlay());
@@ -86,20 +110,20 @@ function game() {
 
      output = `player score: ${playerWin}  computer score: ${computerWin}`;
      scoreboard.textContent = output;
+     if(playerWin > 4) {
+       output = "Congratulations you're the winner!";
+       scoreboard.textContent = output;
+       playerwin = 0;
+       computerWin = 0;
+     }
+     if(computerWin > 4) {
+      output = "Congratulations you're the winner!";
+      scoreboard.textContent = output;
+      playerwin = 0;
+      computerWin = 0;
+     }
   });
   
-  if(playerWin > 4) {
-    output = "Congratulations you're the winner!";
-    scoreboard.textContent = output;
-    playerwin = 0;
-    computerWin = 0;
-  }
-  if(computerWin > 4) {
-    output = "Oof!, you've lost the computer has won! Better luck next time!";
-    scoreboard.textContent = output;
-    playerWin = 0;
-    computerWin = 0;
-  }
 }
 
 game();
