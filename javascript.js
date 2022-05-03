@@ -55,6 +55,14 @@ rbtn.addEventListener("click", function() {
     draw++;
   }
   displayResults();
+  if(playerWin > 4){
+    printWin(1);
+    reset();
+  }
+  if(computerWin > 4){
+    printWin(0);
+    reset();
+  }
 });
 
 pbtn.addEventListener("click", function() {
@@ -69,6 +77,14 @@ pbtn.addEventListener("click", function() {
     draw++;
   }
   displayResults();
+  if(playerWin > 4){
+    printWin(1);
+    reset();
+  }
+  if(computerWin > 4){
+    printWin(0);
+    reset();
+  }
 });
 
 sbtn.addEventListener("click", function() {
