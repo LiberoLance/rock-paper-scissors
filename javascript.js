@@ -82,10 +82,38 @@ sbtn.addEventListener("click", function() {
   if(result === 0){
     draw++;
   }
+
   displayResults();
+
+  if(playerWin > 4){
+    printWin(1);
+    reset();
+  }
+  if(computerWin > 4){
+    printWin(0);
+    reset();
+  }
 }); 
 
 function displayResults() {
   let output = `player score: ${playerWin}  computer score: ${computerWin} draws: ${draw}`;
   scoreboard.textContent = output;
+}
+
+function printWin(whoWon) {
+  let output = '';
+  if(whoWon === 1){  
+    output = "Congratulations, you've won!";
+    scoreboard.textContent = output;
+  }
+  if(whoWon === 0){  
+    output = "Oof, you've lost! Better luck next time!";
+    scoreboard.textContent = output;
+  }
+}
+
+function reset() {
+  playerWin = 0;
+  computerWin = 0;
+  draw = 0;
 }
