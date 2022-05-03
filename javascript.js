@@ -46,7 +46,6 @@ function game() {
   let playerWin = 0;
   let computerWin = 0;
   let draw = 0;
-  let output = '';
   const rbtn = document.querySelector('#rock');
   const pbtn = document.querySelector('#paper');
   const sbtn = document.querySelector('#scissor'); 
@@ -73,20 +72,9 @@ function game() {
        computerWin++;
      }
      if(result === 0){
-       output = 'draw!';
-       scoreboard.textContent = output;
+       draw++;
      }
 
-     output = `player score: ${playerWin}  computer score: ${computerWin}`;
-     scoreboard.textContent = output;
-     if(playerWin > 4) {
-       output = "Congratulations you're the winner!";
-       scoreboard.textContent = output;
-     }
-     if(computerWin > 4) {
-       output = "Oof! You've lost! Better luck next time!";
-       scoreboard.textContent = output;
-     } 
   });
   sbtn.addEventListener("click", function() {
      let result = playRound('scissor', computerPlay());
@@ -97,21 +85,16 @@ function game() {
        computerWin++;
      }
      if(result === 0){
-       output = 'draw!';
-       scoreboard.textContent = output;
+       draw++;
      }
-
-     output = `player score: ${playerWin}  computer score: ${computerWin}`;
-     scoreboard.textContent = output;
-     if(playerWin > 4) {
-       output = "Congratulations you're the winner!";
-       scoreboard.textContent = output;
-     }
-     if(computerWin > 4) {
-       output = "Oof! You've lost! Better luck next time!";
-       scoreboard.textContent = output;
-     } 
   });
+  displayResults();  
+
+  function displayResults() {
+    let output = `player score: ${playerWin}  computer score: ${computerWin} draws: ${draw}`;
+    scoreboard.textContent = output;
+  }
+
 }
 
 game();
