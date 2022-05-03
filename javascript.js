@@ -35,66 +35,57 @@ function playRound(playerChoice, computerChoice) {
     return 2;
   }
 }
+let playerWin = 0;
+let computerWin = 0;
+let draw = 0;
+const rbtn = document.querySelector('#rock');
+const pbtn = document.querySelector('#paper');
+const sbtn = document.querySelector('#scissor'); 
+const scoreboard = document.querySelector('#scoreboard');  
 
-/*game()
-  plays a game of 5 rounds, tracks the score and reports the winner at the end
-  1. call playRound when clicked
-  2. display results of each round in a div and keep a score for each player
-  3. once a player reaches 5 points announce the winner
-*/
-function game() {
-  let playerWin = 0;
-  let computerWin = 0;
-  let draw = 0;
-  const rbtn = document.querySelector('#rock');
-  const pbtn = document.querySelector('#paper');
-  const sbtn = document.querySelector('#scissor'); 
-  const scoreboard = document.querySelector('#scoreboard');  
-
-  rbtn.addEventListener("click", function() {
-     let result = playRound('rock', computerPlay());
-     if(result === 1){
-       playerWin++;
-     }
-     if(result === 2){
-       computerWin++;
-     }
-     if(result === 0){
-       draw++;
-     }
-  });
-  pbtn.addEventListener("click", function() {
-     let result = playRound('paper', computerPlay());
-     if(result === 1){
-       playerWin++;
-     }
-     if(result === 2){
-       computerWin++;
-     }
-     if(result === 0){
-       draw++;
-     }
-
-  });
-  sbtn.addEventListener("click", function() {
-     let result = playRound('scissor', computerPlay());
-     if(result === 1){
-       playerWin++;
-     }
-     if(result === 2){
-       computerWin++;
-     }
-     if(result === 0){
-       draw++;
-     }
-  });
-  displayResults();  
-
-  function displayResults() {
-    let output = `player score: ${playerWin}  computer score: ${computerWin} draws: ${draw}`;
-    scoreboard.textContent = output;
+rbtn.addEventListener("click", function() {
+  let result = playRound('rock', computerPlay());
+  if(result === 1){
+    playerWin++;
   }
+  if(result === 2){
+    computerWin++;
+  }
+  if(result === 0){
+    draw++;
+  }
+  displayResults();
+});
 
+pbtn.addEventListener("click", function() {
+  let result = playRound('paper', computerPlay());
+  if(result === 1){
+    playerWin++;
+  }
+  if(result === 2){
+    computerWin++;
+  }
+  if(result === 0){
+    draw++;
+  }
+  displayResults();
+});
+
+sbtn.addEventListener("click", function() {
+  let result = playRound('scissor', computerPlay());
+  if(result === 1){
+    playerWin++;
+  }
+  if(result === 2){
+    computerWin++;
+  }
+  if(result === 0){
+    draw++;
+  }
+  displayResults();
+}); 
+
+function displayResults() {
+  let output = `player score: ${playerWin}  computer score: ${computerWin} draws: ${draw}`;
+  scoreboard.textContent = output;
 }
-
-game();
