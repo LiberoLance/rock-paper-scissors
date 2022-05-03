@@ -17,9 +17,9 @@ function computerPlay() {
 }
 
 /*playRound(playerChoice, computerChoice)
-  takes the player's choice and compares to computers, returns string declaring a winner.
+  takes the player's choice and compares to computers, returns int declaring a winner.
   1. Map out conditions
-  2. return string declaring winner
+  2. return int declaring winner
 */
 function playRound(playerChoice, computerChoice) {
 
@@ -45,6 +45,7 @@ function playRound(playerChoice, computerChoice) {
 function game() {
   let playerWin = 0;
   let computerWin = 0;
+  let draw = 0;
   let output = '';
   const rbtn = document.querySelector('#rock');
   const pbtn = document.querySelector('#paper');
@@ -60,20 +61,8 @@ function game() {
        computerWin++;
      }
      if(result === 0){
-       output = 'draw!';
-       scoreboard.textContent = output;
+       draw++;
      }
-    
-    /* output = `player score: ${playerWin}  computer score: ${computerWin}`;
-     scoreboard.textContent = output;*/
-     if(playerWin > 4) {
-       output = "Congratulations you're the winner!";
-       scoreboard.textContent = output; 
-     }
-     if(computerWin > 4) {
-       output = "Oof! You've lost! Better luck next time!";
-       scoreboard.textContent = output;
-     }     
   });
   pbtn.addEventListener("click", function() {
      let result = playRound('paper', computerPlay());
