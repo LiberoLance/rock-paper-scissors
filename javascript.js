@@ -119,11 +119,11 @@ function displayResults() {
 function printWin(whoWon) {
   let output = '';
   if(whoWon === 1){  
-    output = "Congratulations, you've won!";
+    output = `Congratulations, you've won! your score: ${playerWin} computer score: ${computerWin} draws: ${draw}`;
     scoreboard.textContent = output;
   }
   if(whoWon === 0){  
-    output = "Oof, you've lost! Better luck next time!";
+    output = `Oof, you've lost! Better luck next time! your score: ${playerWin} computer score: ${computerWin} draws: ${draw} `;
     scoreboard.textContent = output;
   }
 }
